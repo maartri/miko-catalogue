@@ -1,0 +1,45 @@
+header{
+    background: #ffe99a;
+    color: #4a4a4a;
+}
+
+header span{
+    font-size:1.5rem;
+    font-family: 'Roboto';
+    padding:5px 10px;
+}
+
+ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+}
+
+li{
+    display: inline-block;
+    padding: 6px 10px;
+    cursor:pointer;
+}
+li:hover{
+    background:#e9e9e9;
+}
+
+.book-container{
+    padding:4rem;
+}
+
+.book-container .card{
+    float:left;
+    margin-right:1rem;
+    margin-bottom:1rem;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.add-book-container{
+    padding: 4rem;
+}

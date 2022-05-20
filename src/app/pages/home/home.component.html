@@ -1,0 +1,42 @@
+<div>
+    <header>
+        <span>Mikos Library</span>
+
+        <ul>
+            <li (click)="showCatalogue()">Show Catalogue</li>
+            <li (click)="showBooks()">Add Books</li>
+            <li (click)="logout()">Logout</li>
+        </ul>
+    </header>
+
+
+
+    <div class="book-container" *ngIf="view == 0">
+        <div class="card" style="width: 18rem;" *ngFor="let booking of books">
+            <img [src]="'../../../assets/' + booking.picture" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ booking.name }}</h5>
+              <div>Author: {{ booking.author }}</div>
+              <div (click)="delete(booking)">Delete</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-book-container" *ngIf="view == 1">
+        <div style="width:300px">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Book Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="book.name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Author</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="book.author" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Author</label> -->
+                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <button class="btn btn-primary" (click)="addBook()">Add Book</button>
+        </div>
+    </div>
+</div>
